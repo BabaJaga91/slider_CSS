@@ -1,0 +1,148 @@
+*{
+   box-sizing: border-box;
+}
+
+body{
+    background-image: url(https://images.unsplash.com/photo-1508793156468-aa1cbe7cd67b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=11ed6a6164404d58fa4547b37c75a085&auto=format&fit=crop&w=1502&q=80);
+}
+
+.container {
+    position: relative;
+    width: 900px;
+    height:400px;
+    margin: 60px auto 0;
+}
+
+.container > input {
+    display:none;
+}
+.slider {
+    width:inherit;
+    height: inherit;
+    position: relative;
+    background-color: #fff;
+    border: 15px solid gray;
+    border-radius: 10px;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, .5);
+    overflow: hidden;
+    
+}
+.slider,
+.img {
+                 
+    width: inherit;
+    height: inherit;
+}
+
+.img {
+    position: absolute;
+    margin-left: - 8px;
+    
+}
+
+.img1 {
+background-image: url(https://images.pexels.com/photos/417083/pexels-photo-417083.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-size: cover;
+}
+
+.img2 {
+    background-image: url(https://images.pexels.com/photos/348523/pexels-photo-348523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-size: cover;
+}
+
+.img3 {
+    background-image: url(https://images.pexels.com/photos/66258/staniel-cay-swimming-pig-seagull-fish-66258.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-size: cover;
+}
+
+.img4 {
+    background-image: url(https://images.pexels.com/photos/632522/pexels-photo-632522.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-size: cover;
+}
+
+.img5 {
+    background-image: url(https://images.pexels.com/photos/723997/pexels-photo-723997.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-size: cover;
+}
+
+#slide1:checked ~ .slider .img1,
+#slide2:checked ~ .slider .img2,
+#slide3:checked ~ .slider .img3,
+#slide4:checked ~ .slider .img4,
+#slide5:checked ~ .slider .img5
+{
+    opacity: 1;
+    z-index: 1;
+    transform: rotateY(0) translateZ(0) scale(1);
+}
+
+.controls {
+           
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    margin-left: -115px;
+}
+
+.controls label {
+    display: block;
+    height: 10px;
+    width: 30px;
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: #000;
+    opacity: .2;
+    transition: opacity .7s;
+}
+
+
+.controls label:hover,
+.side-controls label:hover,
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4),
+#slide5:checked ~ .controls label:nth-of-type(5)
+ {
+    opacity: 1;
+}
+
+
+.side-controls label {
+  position: absolute;
+  display: block;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  top: 50%;
+  margin-top: -15px;
+  cursor: pointer;
+  transition: opacity .5s; 
+  opacity: .5;
+}
+
+#slide1:checked ~ .side-controls label:nth-of-type(5),
+#slide2:checked ~ .side-controls label:nth-of-type(1),
+#slide3:checked ~ .side-controls label:nth-of-type(2),
+#slide4:checked ~ .side-controls label:nth-of-type(3),
+#slide5:checked ~ .side-controls label:nth-of-type(4)
+ {
+  border-right: 40px solid #000;
+  left: -40px;
+}
+
+#slide1:checked ~ .side-controls label:nth-of-type(2),
+#slide2:checked ~ .side-controls label:nth-of-type(3),
+#slide3:checked ~ .side-controls label:nth-of-type(4),
+#slide4:checked ~ .side-controls label:nth-of-type(5),
+#slide5:checked ~ .side-controls label:nth-of-type(1)
+ {
+  border-left: 40px solid #000;
+  right: -40px;
+}
+
+.slider-side  {
+  position: absolute;
+  bottom: 7px;
+  right: 20px;
+}
